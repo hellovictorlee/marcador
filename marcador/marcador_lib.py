@@ -64,7 +64,8 @@ class Database():
         self.conn.commit()
 
         import webbrowser
-        webbrowser.open(url)
+        browser = webbrowser.get('firefox')
+        browser.open(url)
 
     def add_bookmark(self, url, tags):
         self.cursor.execute(f'insert into bookmarks (url,count) values ("{url}",0)')
